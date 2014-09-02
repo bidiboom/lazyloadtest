@@ -23,21 +23,17 @@ angular.module('app-module',
                 $urlRouterProvider.otherwise("/login");
                 $locationProvider.hashPrefix('!');
 
-                var viewName = "main-view";
 
                 
-                     
-
-                var componentName = "login";
                 var componentLocation = "app_components/login";
 
 
-                $stateProvider.state(componentName, {
+                $stateProvider.state('login', {
                     url: "/login",
                     views: {
-                        viewName: {
+                        "main-view": {
                             controller: "loginController",
-                            templateUrl: componentLocation + "/login.html"
+                            templateUrl: "app_components/login/login.html"
                         }
                     },
                     resolve: {
@@ -47,8 +43,8 @@ angular.module('app-module',
                                 {
                                     name: 'loginModule',
                                     files: [
-                                        componentLocation + '/login.css',
-                                        componentLocation + '/login.js'
+                                        'app_components/login/login.css',
+                                        'app_components/login/login.js'
                                     ]
                                 }
                             ]);
@@ -60,7 +56,7 @@ angular.module('app-module',
                 $stateProvider.state("shell", {
                     url: "/shell",
                     views: {
-                        viewName: {
+                        "main-view": {
                             controller: "shellController",
                             templateUrl: "app_components/shell/shell" + ".html"
                         }

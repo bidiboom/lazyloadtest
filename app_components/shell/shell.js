@@ -1,4 +1,4 @@
-﻿angular.module("shellModule",
+angular.module("shellModule",
     [
         {
             name: 'ngGrid',
@@ -9,6 +9,6 @@
         }
     ]
 )
-    .controller('ShellController', ['$scope', function ($scope) {
+    .controller('shellController', ['$scope', function ($scope) {
 
     }]);
